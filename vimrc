@@ -1,11 +1,17 @@
-syntax on
+call plug#begin()
 
+Plug 'drewtempelmeyer/palenight.vim'
+
+call plug#end()
+
+syntax on
 set background=dark
 
 try
-	colorscheme gruvbox
+	colorscheme palenight
 catch
 endtry
+
 
 if(has("termguicolors"))
 	set termguicolors
@@ -20,7 +26,6 @@ set encoding=utf8
 set tabstop=4 	" Tabulation to 4 spaces
 set shiftwidth=4
 
-" Vim powerline
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
