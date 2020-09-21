@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/hugo/.oh-my-zsh"
+export ANDROID_SDK="/home/hugo/Android/Sdk"
+export PATH=$PATH:~/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,6 +83,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 
 # User configuration
 
@@ -95,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+#
+# powerline-daemon -q
+# . /home/hugo/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,3 +114,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mkaut="touch AUTHORS; echo -e 'Hugo\nBuissez\nhugo.buissez\nhugo.buissez@epita.fr' > AUTHORS"
+
+###-tns-completion-start-###
+if [ -f /home/hugo/.tnsrc ]; then 
+    source /home/hugo/.tnsrc 
+fi
+###-tns-completion-end-###

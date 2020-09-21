@@ -18,7 +18,7 @@ gaps outer 0
 # STARTUP APPLICATIONS
 
 exec --no-startup-id killall polybar; polybar -r bar
-exec --no-startup-id feh --bg-fill ~/Pictures/lobby-wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/lobby2.jpg
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
@@ -35,7 +35,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+Shift+A kill
 
-bindsym $mod+d exec rofi -show run # DMENU
+bindsym $mod+d exec rofi -show run -font "DejaVu Sans 10"
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down

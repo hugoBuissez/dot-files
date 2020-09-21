@@ -17,6 +17,7 @@ if(has("termguicolors"))
 	set termguicolors
 endif
 
+set undofile " Persistent undo
 set autoindent	" Indent at new line
 set si
 set wrap
@@ -33,4 +34,3 @@ set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
