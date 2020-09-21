@@ -9,6 +9,7 @@ call plug#begin()
 " Plug 'embark-theme/vim', { 'as': 'embark' }
 Plug 'preservim/nerdcommenter'
 Plug 'ayu-theme/ayu-vim'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -29,7 +30,9 @@ endif
 
 " SETTINGS "
 """"""""""""
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 let ayucolor="mirage"
 let mapleader = "/" " for NERDcommenting
 set undofile " Persistent undo
