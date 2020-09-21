@@ -1,16 +1,26 @@
 call plug#begin()
 
-Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'preservim/nerdcommenter'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
 syntax on
 set background=dark
 
+let ayucolor="mirage"
+let mapleader = "/"
+
 try
-	colorscheme palenight
+	colorscheme ayu
 catch
 endtry
+
+"let g:lightline = {
+"      \ 'colorscheme': 'embark',
+"      \ }
 
 
 if(has("termguicolors"))
