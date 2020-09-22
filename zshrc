@@ -115,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mkaut="touch AUTHORS; echo -e 'Hugo\nBuissez\nhugo.buissez\nhugo.buissez@epita.fr' > AUTHORS"
 alias com="git commit -s"
+alias sdnow="shurdown now"
 
 ###-tns-completion-start-###
 if [ -f /home/hugo/.tnsrc ]; then 
