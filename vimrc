@@ -1,43 +1,43 @@
-
-
-" PLUGINS "
+""PLUGINS""
 """""""""""
 
 call plug#begin()
 
-" Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
 
 
-" CHECKINGS "
-"""""""""""""
-
+""COLORS""
+""""""""""
 syntax on
-
-try
-	colorscheme ayu
-catch
-endtry
 
 if(has("termguicolors"))
 	set termguicolors
 endif
 
-" SETTINGS "
+let g:gruvbox_material_background = 'soft'
+set background=dark
+
+try
+	colorscheme gruvbox-material
+catch
+endtry
+
+""SETTINGS""
 """"""""""""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 let ayucolor="mirage"
 let mapleader = "/" " for NERDcommenting
+
 set undofile " Persistent undo
 set autoindent	" Indent at new line
-set background=dark
 set si
 set wrap
 set incsearch	" Highlighting while searching
