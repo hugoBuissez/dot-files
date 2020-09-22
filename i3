@@ -12,13 +12,13 @@ for_window [title="^.*"] border pixel 0
 
 # SET GAPS
 
-gaps inner 10
-gaps outer 0
+gaps inner 12
+gaps outer 5
 
 # STARTUP APPLICATIONS
 
 exec --no-startup-id killall polybar; polybar -r bar
-exec --no-startup-id feh --bg-fill ~/Pictures/lobby2.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/lobby3.png
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
@@ -155,3 +155,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
+client.focused #003f4f #003f4f #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
