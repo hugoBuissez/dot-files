@@ -20,7 +20,7 @@ if(has("termguicolors"))
 	set termguicolors
 endif
 
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_background = 'soft' " Colorscheme settings
 set background=dark
 
 try
@@ -30,9 +30,6 @@ endtry
 
 ""SETTINGS""
 """"""""""""
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
 let ayucolor="mirage"
 let mapleader = "/" " for NERDcommenting
 
