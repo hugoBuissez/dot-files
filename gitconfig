@@ -1,0 +1,17 @@
+[user]
+	email = hbuissez@gmail.com
+	name = Hugo
+[credential]
+	helper = store
+[alias]	
+	d = diff
+	st = status
+	ci = commit -s
+	l = log
+	ph = push
+    pl = pull
+    r = remote
+    m = merge
+    cl = clean -fd
+    t = tag
+    ui = update-index
