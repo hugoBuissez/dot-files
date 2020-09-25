@@ -7,8 +7,8 @@ font pango:monospace 10
 
 # DEFAULT BORDER
 
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
+for_window [title="^.*"] border pixel 1
 
 # SET GAPS
 
@@ -155,7 +155,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-client.focused #003f4f #003f4f #fdf6e3 #6c71c4
+client.focused #fff #a8dadc #fff #fff
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
