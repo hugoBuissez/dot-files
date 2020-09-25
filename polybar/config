@@ -44,9 +44,9 @@ font-3 = fontawesome:style=regular;size=8;+3
 font-4 = FontAwesome:style=Regular;size=8;+3
 
 
-modules-left =  i3 spotify
-modules-center = 
-modules-right = pulseaudio cpu wlan battery date 
+modules-left =  i3 
+modules-center = spotify
+modules-right = pulseaudio cpu  battery date 
 
 tray-position = right
 tray-padding = 2
@@ -120,15 +120,15 @@ format-foreground = #ffffff
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = ""
+;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 label = %percentage:2%%
 
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format = <label>
 exec = python /home/hugo/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
 ;format-underline = #0a6cf5
@@ -175,7 +175,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date ="%d-%m-%Y -"
+date =" %d-%m-%Y -"
 
 date-alt = %d-%m-%Y
 
@@ -191,8 +191,8 @@ label =  %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume =  VOL %percentage%%
+format-volume = <label-volume>
+label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
 
