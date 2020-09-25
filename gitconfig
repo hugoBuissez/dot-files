@@ -5,6 +5,7 @@
 	helper = store
 [alias]	
 	d = diff
+	a = add
 	st = status
 	ci = commit -s
 	l = log
