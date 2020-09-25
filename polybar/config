@@ -175,10 +175,11 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %d-%m-%Y"
+date ="%d-%m-%Y -"
 
-time = %H:%M
+date-alt = %d-%m-%Y
+
+time = "%H:%M:%S   "
 time-alt = %H:%M:%S
 
 format-prefix = 
