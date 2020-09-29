@@ -49,6 +49,7 @@ nmap ; A;<CR>
 " Nerd tree binded to Ctrl+N
 nmap <C-N> :NERDTreeToggle<CR>
 
+filetype plugin indent on
 set background=dark
 set nocompatible
 set undofile " Persistent undo
@@ -59,6 +60,7 @@ set incsearch	" Highlighting while searching
 set encoding=utf8    
 set tabstop=4 	" Tabulation to 4 spaces
 set shiftwidth=4
+set expandtab
 " Always show statusline
 set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
