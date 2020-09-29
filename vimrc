@@ -1,4 +1,4 @@
-""PLUGINS""
+
 """""""""""
 
 call plug#begin()
@@ -44,7 +44,7 @@ let g:DoxygenToolkit_licenseTag="My own license"
 
 " For C/C++
 " Add semi-colon and start new line
-noremap ; A;<Esc>o 
+nmap ; A;<CR>
 
 " Nerd tree binded to Ctrl+N
 nmap <C-N> :NERDTreeToggle<CR>
