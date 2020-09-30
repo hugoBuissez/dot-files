@@ -114,8 +114,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mkaut="touch AUTHORS; echo -e 'Hugo\nBuissez\nhugo.buissez\nhugo.buissez@epita.fr' > AUTHORS"
+alias mkmake="cp ~/utils/Makefile ./"
 alias com="git commit -s"
 alias sdnow="shutdown now"
+
+### CLANG FORMAT ALIAS
+
+cf() {
+    clang-format -style=file "$1"
+}
+
+cfi() {
+    clang-format -style=file -i "$1"
+}
 
 ###-tns-completion-start-###
 if [ -f /home/hugo/.tnsrc ]; then 
