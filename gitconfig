@@ -5,8 +5,8 @@
 	helper = store
 [alias]	
 	d = diff
-	a = add
 	st = status
+    lg = log --oneline --graph
 	ci = commit -s
 	l = log
 	ph = push
