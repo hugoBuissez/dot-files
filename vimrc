@@ -1,4 +1,4 @@
-
+""PLUGINS""
 """""""""""
 
 call plug#begin()
@@ -49,20 +49,33 @@ nmap ; A;<CR>
 " Nerd tree binded to Ctrl+N
 nmap <C-N> :NERDTreeToggle<CR>
 
+" Clang-format on save (EPITA Coding Style)
+function FormatBuffer()
+  if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+    let cursor_pos = getpos('.')
+    :%!clang-format
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+ 
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+
 filetype plugin indent on
-set background=dark
+set background=dark " Colorscheme settings
 set nocompatible
 set undofile " Persistent undo
-set autoindent	" Indent at new line
-set si
+set autoindent " Indent at new line
+set si " Smart auto-indent
 set wrap
-set incsearch	" Highlighting while searching
+set colorcolumn=80 " Limit char on a line
+set incsearch " Highlighting while searching
 set encoding=utf8    
-set tabstop=4 	" Tabulation to 4 spaces
+
+" Tabulation to 4 spaces
+set tabstop=4 
 set shiftwidth=4
 set expandtab
-" Always show statusline
-set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set number
+
+set laststatus=2 " Show status line
+set number " Lines number
 set t_Co=256
