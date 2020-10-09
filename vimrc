@@ -21,12 +21,12 @@ if(has("termguicolors"))
 	set termguicolors
 endif
 
-let g:miramare_enable_italic = 1
-let g:miramare_disable_italic_comment = 1
-let g:gruvbox_material_background = 'soft' " Colorscheme settings
+"let g:miramare_enable_italic = 1
+"let g:miramare_disable_italic_comment = 1
+"let g:gruvbox_material_background = 'soft' " Colorscheme settings
 
 try
-	colorscheme gruvbox-material
+	colorscheme jellybeans
 catch
 endtry
 
@@ -44,11 +44,17 @@ let g:DoxygenToolkit_licenseTag="My own license"
 
 " For C/C++
 " Add semi-colon and start new line
-nmap ; A;<CR>
+nmap ; A;<Esc>
 
 " Nerd tree binded to Ctrl+N
 nmap <C-N> :NERDTreeToggle<CR>
 
+" Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+ 
 " Clang-format on save (EPITA Coding Style)
 function FormatBuffer()
   if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
@@ -61,7 +67,7 @@ endfunction
 autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 
 filetype plugin indent on
-set background=dark " Colorscheme settings
+"set background=dark " Colorscheme settings
 set nocompatible
 set undofile " Persistent undo
 set autoindent " Indent at new line
