@@ -39,7 +39,7 @@ let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   "
 "let g:DoxygenToolkit_blockHeader="-------------------------------"
 "let g:DoxygenToolkit_blockFooter="---------------------------------"
-let g:DoxygenToolkit_authorName="Mathias Lorente"
+let g:DoxygenToolkit_authorName="Hugo Buissez"
 let g:DoxygenToolkit_licenseTag="My own license"
 
 " For C/C++
