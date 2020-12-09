@@ -7,8 +7,8 @@ font pango:monospace 10
 
 # DEFAULT BORDER
 
-for_window [class="^.*"] border pixel 1
-for_window [title="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
 
 # SET GAPS
 
@@ -17,8 +17,9 @@ gaps outer 5
 
 # STARTUP APPLICATIONS
 
-exec --no-startup-id killall polybar; polybar -r bar
-exec --no-startup-id feh --bg-fill ~/Pictures/lobby3.png
+exec --no-startup-id killall polybar;
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id feh --bg-fill ~/Pictures/bg_lobby.jpg
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
@@ -103,9 +104,9 @@ bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute"
+bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec bright + # increase screen brightness
