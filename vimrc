@@ -3,51 +3,39 @@
 
 call plug#begin()
 
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'franbach/miramare'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
-""COLORS""
-""""""""""
+" Enable highlighted syntax and terminal colors
 syntax on
+set t_Co=256
 
-if(has("termguicolors"))
-	set termguicolors
-endif
-
-"let g:miramare_enable_italic = 1
-"let g:miramare_disable_italic_comment = 1
-"let g:gruvbox_material_background = 'soft' " Colorscheme settings
-
+" Set colorscheme
 try
 	colorscheme jellybeans
 catch
 endtry
 
-""SETTINGS""
-""""""""""""
-let mapleader = "/" " for NERDcommenting
+" NerdCommenting settings
+let mapleader = "/"
 
+" Doxygen settings
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
 let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   "
-"let g:DoxygenToolkit_blockHeader="-------------------------------"
-"let g:DoxygenToolkit_blockFooter="---------------------------------"
 let g:DoxygenToolkit_authorName="Hugo Buissez"
-let g:DoxygenToolkit_licenseTag="My own license"
 
-" For C/C++
-" Add semi-colon and start new line
+" Adds ';' end of line whith button ';' in normal mode
 nmap ; A;<Esc>
 
-" Nerd tree binded to Ctrl+N
-nmap <C-N> :NERDTreeToggle<CR>
+" Shift-[j, k] to scroll-[down, up] w/o moving cursor
+nmap <s-j> <c-e>
+nmap <s-k> <c-y>
 
 " Disable arrow keys
 noremap <Up> <Nop>
@@ -55,7 +43,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
  
-" Clang-format on save (EPITA Coding Style)
+" Clang-format on save (School Coding Style)
 function FormatBuffer()
   if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
     let cursor_pos = getpos('.')
@@ -66,8 +54,11 @@ endfunction
  
 autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 
+" General setting
 filetype plugin indent on
-"set background=dark " Colorscheme settings
+
+set background=dark
+set termguicolors " Terminal color
 set nocompatible
 set undofile " Persistent undo
 set autoindent " Indent at new line
@@ -84,4 +75,3 @@ set expandtab
 
 set laststatus=2 " Show status line
 set number " Lines number
-set t_Co=256
