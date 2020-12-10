@@ -3,10 +3,10 @@
 
 call plug#begin()
 
-Plug 'preservim/nerdcommenter'
-Plug 'itchyny/lightline.vim'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'SirVer/ultisnips'
+Plug 'preservim/nerdcommenter' " Quick comment / uncomment
+Plug 'itchyny/lightline.vim' " Vim bottom line
+Plug 'vim-scripts/DoxygenToolkit.vim' " Documentation
+Plug 'SirVer/ultisnips' " Used for C language (only for header)
 Plug 'honza/vim-snippets'
 
 call plug#end()
@@ -23,12 +23,6 @@ endtry
 
 " NerdCommenting settings
 let mapleader = "/"
-
-" Doxygen settings
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_authorName="Hugo Buissez"
 
 " Adds ';' end of line whith button ';' in normal mode
 nmap ; A;<Esc>
