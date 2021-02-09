@@ -6,14 +6,13 @@ call plug#begin()
 Plug 'preservim/nerdcommenter' " Quick comment / uncomment
 Plug 'itchyny/lightline.vim' " Vim bottom line
 Plug 'vim-scripts/DoxygenToolkit.vim' " Documentation
-Plug 'SirVer/ultisnips' " Used for C language (only for header)
-Plug 'honza/vim-snippets'
 
 call plug#end()
 
 " Enable highlighted syntax and terminal colors
-syntax on
+syntax on;
 set t_Co=256
+set background=dark
 
 " Set colorscheme
 try
@@ -46,12 +45,11 @@ function FormatBuffer()
   endif
 endfunction
  
-autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+autocmd BufWritePre *.cc,*.hh,*.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 
 " General setting
 filetype plugin indent on
 
-set background=dark
 set termguicolors " Terminal color
 set nocompatible
 set undofile " Persistent undo
