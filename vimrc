@@ -1,22 +1,18 @@
-""PLUGINS""
-"""""""""""
-
 call plug#begin()
 
 Plug 'preservim/nerdcommenter' " Quick comment / uncomment
 Plug 'itchyny/lightline.vim' " Vim bottom line
-Plug 'vim-scripts/DoxygenToolkit.vim' " Documentation
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
 " Enable highlighted syntax and terminal colors
-syntax on;
-set t_Co=256
+syntax enable;
 set background=dark
 
 " Set colorscheme
 try
-	colorscheme jellybeans
+	colorscheme onehalfdark
 catch
 endtry
 
@@ -46,6 +42,8 @@ function FormatBuffer()
 endfunction
  
 autocmd BufWritePre *.cc,*.hh,*.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+
+set include=^\s#\sinclude\ \(<boost/\)\@!
 
 " General setting
 filetype plugin indent on
