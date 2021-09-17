@@ -1,8 +1,6 @@
 call plug#begin()
 
-Plug 'preservim/nerdcommenter' " Quick comment / uncomment
 Plug 'itchyny/lightline.vim' " Vim bottom line
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -12,7 +10,7 @@ set background=dark
 
 " Set colorscheme
 try
-	colorscheme onehalfdark
+	colorscheme solarized8_dark
 catch
 endtry
 
@@ -32,7 +30,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
  
-" Clang-format on save (School Coding Style)
+" Clang-format on save (C Coding Style)
 function FormatBuffer()
   if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
     let cursor_pos = getpos('.')
@@ -43,11 +41,13 @@ endfunction
  
 autocmd BufWritePre *.cc,*.hh,*.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 
+" Avoid C++ Boost library conflict
 set include=^\s#\sinclude\ \(<boost/\)\@!
 
 " General setting
 filetype plugin indent on
 
+set t_Co=256
 set termguicolors " Terminal color
 set nocompatible
 set undofile " Persistent undo
